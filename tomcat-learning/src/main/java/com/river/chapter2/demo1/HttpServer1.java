@@ -64,11 +64,13 @@ public class HttpServer1 {
 
                 String uri = request1.getUri();
 
+                LOGGER.debug("uri = {}", uri);
+
                 if (uri.startsWith("/servlet/")) {
                     ServletProcessor1 processor = new ServletProcessor1();
                     processor.process(request1, response1);
                 } else {
-                    StaticResourceProcessor1 processor = new StaticResourceProcessor1();
+                    StaticResourceProcessor processor = new StaticResourceProcessor();
                     processor.process(request1, response1);
                 }
 

@@ -9,9 +9,9 @@ import org.slf4j.LoggerFactory;
  * @author riverrrflow
  * @since 2018-09-07-下午10:37
  */
-public class StaticResourceProcessor1 {
+public class StaticResourceProcessor {
 
-    private static final Logger LOGGER = LoggerFactory.getLogger(StaticResourceProcessor1.class);
+    private static final Logger LOGGER = LoggerFactory.getLogger(StaticResourceProcessor.class);
 
     public void process(Request1 request1, Response1 response1) {
         try {
