@@ -1,7 +1,3 @@
-package com.river.chapter2.demo1;
-
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 import javax.servlet.*;
 import java.io.IOException;
@@ -15,10 +11,8 @@ import java.io.PrintWriter;
  */
 public class PrimitiveServlet implements Servlet {
 
-    private static final Logger LOGGER = LoggerFactory.getLogger(PrimitiveServlet.class);
-
     public void init(ServletConfig servletConfig) throws ServletException {
-        LOGGER.info("servlet init.");
+        System.out.println("servlet init.");
     }
 
     public ServletConfig getServletConfig() {
@@ -26,9 +20,12 @@ public class PrimitiveServlet implements Servlet {
     }
 
     public void service(ServletRequest servletRequest, ServletResponse servletResponse) throws ServletException, IOException {
-        LOGGER.info("servlet service.");
+        System.out.println("servlet service.");
         PrintWriter writer = servletResponse.getWriter();
-        writer.println("Hello. river");
+        writer.println("HTTP/1.1 200 OK\r\n" +
+                "Content-Type: text/html\r\n" +
+                "\r\n");
+        writer.println("Hello. riverrrflow");
         writer.print("flow");
     }
 
@@ -37,6 +34,6 @@ public class PrimitiveServlet implements Servlet {
     }
 
     public void destroy() {
-        LOGGER.info("servlet destory.");
+        System.out.println("servlet destory.");
     }
 }

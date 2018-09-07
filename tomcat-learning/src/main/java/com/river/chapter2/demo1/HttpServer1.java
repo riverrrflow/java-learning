@@ -28,7 +28,7 @@ public class HttpServer1 {
     public static final String WEB_PROJECT_ROOT;
 
     static{
-        URL webrootURL = HttpServer1.class.getClassLoader().getResource("webroot");
+        URL webrootURL = HttpServer1.class.getClassLoader().getResource(".");
         WEB_PROJECT_ROOT = webrootURL.getFile();
     }
 
