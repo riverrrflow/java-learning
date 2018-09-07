@@ -65,10 +65,10 @@ public class HttpServer1 {
                 String uri = request1.getUri();
 
                 if (uri.startsWith("/servlet/")) {
-                    ServletProcessor1 processor = new ServletProcessor();
+                    ServletProcessor1 processor = new ServletProcessor1();
                     processor.process(request1, response1);
                 } else {
-                    StaticResourceProcessor processor = new StaticResourceProcessor();
+                    StaticResourceProcessor1 processor = new StaticResourceProcessor1();
                     processor.process(request1, response1);
                 }
 
