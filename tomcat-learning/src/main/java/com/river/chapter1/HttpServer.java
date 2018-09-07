@@ -72,5 +72,7 @@ public class HttpServer {
                 LOGGER.error("handler request error.", e);
             }
         }
+
+        LOGGER.info("server is shutdown!");
     }
 }
