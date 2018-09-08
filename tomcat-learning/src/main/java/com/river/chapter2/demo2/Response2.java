@@ -1,5 +1,7 @@
-package com.river.chapter2.demo1;
+package com.river.chapter2.demo2;
 
+import com.river.chapter2.demo1.HttpServer1;
+import com.river.chapter2.demo1.Request1;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -14,9 +16,9 @@ import java.util.Locale;
  * @author riverrrflow
  * @since 2018-09-07-下午10:07
  */
-public class Response1 implements ServletResponse {
+public class Response2 implements ServletResponse {
 
-    private static final Logger LOGGER = LoggerFactory.getLogger(Response1.class);
+    private static final Logger LOGGER = LoggerFactory.getLogger(Response2.class);
 
     private static final int BUFFER_SIZE = 1024;
 
@@ -24,7 +26,7 @@ public class Response1 implements ServletResponse {
     private Request1 request1;
     PrintWriter writer;
 
-    public Response1(OutputStream outputStream, Request1 request1) {
+    public Response2(OutputStream outputStream, Request1 request1) {
         this.output = outputStream;
         this.request1 = request1;
     }
