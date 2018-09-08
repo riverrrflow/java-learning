@@ -23,8 +23,8 @@ public class ServletProcessor2 {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(ServletProcessor2.class);
 
-    public void process(Request1 request1, Response1 response1) {
-        String uri = request1.getUri();
+    public void process(Request2 request2, Response2 response2) {
+        String uri = request2.getUri();
         String servletName = uri.substring(uri.lastIndexOf("/") + 1);
 
         LOGGER.debug("ServletName = {}", servletName);
@@ -57,10 +57,12 @@ public class ServletProcessor2 {
         }
 
         Servlet servlet = null;
+        RequestFacade requestFacade = new RequestFacade(request2);
+        ResponseFacade responseFacade = new ResponseFacade(response2);
 
         try {
             servlet = (Servlet) myClass.newInstance();
-            servlet.service(request1, (ServletResponse) response1);
+            servlet.service(requestFacade, responseFacade);
         } catch (Exception e) {
             LOGGER.error("servlet service error.", e);
         }
