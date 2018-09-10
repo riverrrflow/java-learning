@@ -49,5 +49,5 @@ public class HttpRequest implements HttpServletRequest {
 
     protected HashMap headers = new HashMap();
 
-    protected ParameterMap parameters = null;
+//    protected ParameterMap parameters = null;
 }

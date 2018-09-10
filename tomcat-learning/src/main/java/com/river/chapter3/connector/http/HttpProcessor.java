@@ -57,6 +57,10 @@ public class HttpProcessor {
     }
 
     private void parseRequest(SocketInputStream input, OutputStream output) {
+        HttpRequestLine requestLine = new HttpRequestLine();
+
+        input.readRequestLine(requestLine);
+
 
     }
 }
